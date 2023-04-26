@@ -1,25 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "/Users/noah/Projects/Festival Finder/Festival Finder/Festival Finder.csproj": {}
+    "C:\\Users\\LaunchCode\\Desktop\\New folder\\Festival-Finder\\Festival Finder\\Festival Finder.csproj": {}
   },
   "projects": {
-    "/Users/noah/Projects/Festival Finder/Festival Finder/Festival Finder.csproj": {
+    "C:\\Users\\LaunchCode\\Desktop\\New folder\\Festival-Finder\\Festival Finder\\Festival Finder.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/noah/Projects/Festival Finder/Festival Finder/Festival Finder.csproj",
+        "projectUniqueName": "C:\\Users\\LaunchCode\\Desktop\\New folder\\Festival-Finder\\Festival Finder\\Festival Finder.csproj",
         "projectName": "Festival Finder",
-        "projectPath": "/Users/noah/Projects/Festival Finder/Festival Finder/Festival Finder.csproj",
-        "packagesPath": "/Users/noah/.nuget/packages/",
-        "outputPath": "/Users/noah/Projects/Festival Finder/Festival Finder/obj/",
+        "projectPath": "C:\\Users\\LaunchCode\\Desktop\\New folder\\Festival-Finder\\Festival Finder\\Festival Finder.csproj",
+        "packagesPath": "C:\\Users\\LaunchCode\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\LaunchCode\\Desktop\\New folder\\Festival-Finder\\Festival Finder\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/noah/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\LaunchCode\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -37,6 +39,26 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.5, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.5, )"
+            },
+            "Microsoft.EntityFrameworkCore.Relational": {
+              "target": "Package",
+              "version": "[7.0.5, )"
+            },
+            "Pomelo.EntityFrameworkCore.MySql": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -56,7 +78,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.202/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.200\\RuntimeIdentifierGraph.json"
         }
       }
     }
