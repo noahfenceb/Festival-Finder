@@ -27,7 +27,7 @@ namespace Festival_Finder.Models
 
         public override string? ToString()
         {
-            return ToString();
+            return this.ToString();
         }
     }
 }

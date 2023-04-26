@@ -9,14 +9,18 @@ namespace Festival_Finder.Models
 		public string Email { get; set; }
 		public int Phone { get; set; }
 		public string ImageURL { get; set; }
-		public string Location { get; set; }
+        public int? LocationId { get; set; }
+		public Location Location { get; set; }
+        public ICollection<Artist> Artists { get; set; }
+        public ICollection<Festival>Festivals { get; set; }
+        
 
 		public AppUser()
 		{
 
 		}
 
-        public AppUser(string name, string email, int phone, string imageURL, string location)
+        public AppUser(string name, string email, int phone, string imageURL, Location location)
         {
             Name = name;
             Email = email;
@@ -38,7 +42,7 @@ namespace Festival_Finder.Models
 
         public override string? ToString()
         {
-            return ToString();
+            return this.ToString();
         }
     }
 

@@ -4,16 +4,17 @@ namespace Festival_Finder.Models
 	public class Artist
 	{
 		public int Id { get; set; }
-		public string Name { get; set; }
-		public Location Location { get; set; }
+		public string? Name { get; set; }
+        public string? ImageUrl { get; set; }
+		public Location? Location { get; set; }
 		public int FestivalId { get; set; }
-		public ICollection<Festival>? Festival { get; set; }
+		public Festival? Festival { get; set; }
 
 		public Artist()
 		{
 		}
 
-        public Artist(string name, Location location, int festivalId, ICollection<Festival>? festival)
+        public Artist(string name, Location location, int festivalId, Festival? festival)
         {
             Name = name;
             Location = location;
@@ -34,7 +35,7 @@ namespace Festival_Finder.Models
 
         public override string? ToString()
         {
-            return base.ToString();
+            return this.ToString();
         }
     }
 }
