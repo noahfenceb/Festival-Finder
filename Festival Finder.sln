@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 25.0.1705.2
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Festival Finder", "Festival Finder\Festival Finder.csproj", "{84826FCB-A87C-4128-84FA-0C253C395DF8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{84826FCB-A87C-4128-84FA-0C253C395DF8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84826FCB-A87C-4128-84FA-0C253C395DF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{84826FCB-A87C-4128-84FA-0C253C395DF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{84826FCB-A87C-4128-84FA-0C253C395DF8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AF41836C-1409-4A17-BC3B-9E28706E820D}
+	EndGlobalSection
+EndGlobal

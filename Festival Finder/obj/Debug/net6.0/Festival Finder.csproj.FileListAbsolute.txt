@@ -1,0 +1,31 @@
+/Users/noah/Projects/Festival Finder/Festival Finder/bin/Debug/net6.0/appsettings.Development.json
+/Users/noah/Projects/Festival Finder/Festival Finder/bin/Debug/net6.0/appsettings.json
+/Users/noah/Projects/Festival Finder/Festival Finder/bin/Debug/net6.0/Festival Finder.staticwebassets.runtime.json
+/Users/noah/Projects/Festival Finder/Festival Finder/bin/Debug/net6.0/Festival Finder
+/Users/noah/Projects/Festival Finder/Festival Finder/bin/Debug/net6.0/Festival Finder.deps.json
+/Users/noah/Projects/Festival Finder/Festival Finder/bin/Debug/net6.0/Festival Finder.runtimeconfig.json
+/Users/noah/Projects/Festival Finder/Festival Finder/bin/Debug/net6.0/Festival Finder.dll
+/Users/noah/Projects/Festival Finder/Festival Finder/bin/Debug/net6.0/Festival Finder.pdb
+/Users/noah/Projects/Festival Finder/Festival Finder/obj/Debug/net6.0/Festival Finder.csproj.AssemblyReference.cache
+/Users/noah/Projects/Festival Finder/Festival Finder/obj/Debug/net6.0/Festival Finder.GeneratedMSBuildEditorConfig.editorconfig
+/Users/noah/Projects/Festival Finder/Festival Finder/obj/Debug/net6.0/Festival Finder.AssemblyInfoInputs.cache
+/Users/noah/Projects/Festival Finder/Festival Finder/obj/Debug/net6.0/Festival Finder.AssemblyInfo.cs
+/Users/noah/Projects/Festival Finder/Festival Finder/obj/Debug/net6.0/Festival Finder.csproj.CoreCompileInputs.cache
+/Users/noah/Projects/Festival Finder/Festival Finder/obj/Debug/net6.0/Festival Finder.MvcApplicationPartsAssemblyInfo.cache
+/Users/noah/Projects/Festival Finder/Festival Finder/obj/Debug/net6.0/Festival Finder.RazorAssemblyInfo.cache
+/Users/noah/Projects/Festival Finder/Festival Finder/obj/Debug/net6.0/Festival Finder.RazorAssemblyInfo.cs
+/Users/noah/Projects/Festival Finder/Festival Finder/obj/Debug/net6.0/staticwebassets/msbuild.Festival Finder.Microsoft.AspNetCore.StaticWebAssets.props
+/Users/noah/Projects/Festival Finder/Festival Finder/obj/Debug/net6.0/staticwebassets/msbuild.build.Festival Finder.props
+/Users/noah/Projects/Festival Finder/Festival Finder/obj/Debug/net6.0/staticwebassets/msbuild.buildMultiTargeting.Festival Finder.props
+/Users/noah/Projects/Festival Finder/Festival Finder/obj/Debug/net6.0/staticwebassets/msbuild.buildTransitive.Festival Finder.props
+/Users/noah/Projects/Festival Finder/Festival Finder/obj/Debug/net6.0/staticwebassets.pack.json
+/Users/noah/Projects/Festival Finder/Festival Finder/obj/Debug/net6.0/staticwebassets.build.json
+/Users/noah/Projects/Festival Finder/Festival Finder/obj/Debug/net6.0/staticwebassets.development.json
+/Users/noah/Projects/Festival Finder/Festival Finder/obj/Debug/net6.0/scopedcss/Views/Shared/_Layout.cshtml.rz.scp.css
+/Users/noah/Projects/Festival Finder/Festival Finder/obj/Debug/net6.0/scopedcss/bundle/Festival Finder.styles.css
+/Users/noah/Projects/Festival Finder/Festival Finder/obj/Debug/net6.0/scopedcss/projectbundle/Festival Finder.bundle.scp.css
+/Users/noah/Projects/Festival Finder/Festival Finder/obj/Debug/net6.0/Festival Finder.dll
+/Users/noah/Projects/Festival Finder/Festival Finder/obj/Debug/net6.0/refint/Festival Finder.dll
+/Users/noah/Projects/Festival Finder/Festival Finder/obj/Debug/net6.0/Festival Finder.pdb
+/Users/noah/Projects/Festival Finder/Festival Finder/obj/Debug/net6.0/Festival Finder.genruntimeconfig.cache
+/Users/noah/Projects/Festival Finder/Festival Finder/obj/Debug/net6.0/ref/Festival Finder.dll
