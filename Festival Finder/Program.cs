@@ -1,4 +1,5 @@
 ﻿using Festival_Finder.Data;
+using Festival_Finder.Data.SeedData;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -13,6 +14,12 @@ var serverVersion = new MySqlServerVersion(new Version(8, 0, 32));
 builder.Services.AddDbContext<ApplicationDbContext>(dbContextOptions => dbContextOptions.UseMySql(connectionString, serverVersion));
 
 var app = builder.Build();
+
+if (args.Length == 1 && args[0].ToLower() == "seed")
+{
+    SeedData.Seed(app);
+    
+}
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
