@@ -1,0 +1,48 @@
+﻿@using Festival_Finder.ViewModel
+@model AddFestivalViewModel
+
+
+
+<form asp-controller="Festival" asp-action="Create" method="post">
+    <div class="form-group">
+        <label asp-for="Name">Name</label>
+        <input class="form-control" asp-for="Name" type="text" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Description">Description</label>
+        <input class="form-control" asp-for="Description" type="text" />
+        <span asp-validation-for="Description" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="ImageUrl">Image</label>
+        <input class="form-control" asp-for="ImageUrl" type="text" />
+        <span asp-validation-for="ImageUrl" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Location.Street">Street</label>
+        <input class="form-control" asp-for="Location.Street" type="text" />
+        <span asp-validation-for="Location.Street" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Location.City">City</label>
+        <input class="form-control" asp-for="Location.City" type="text" />
+        <span asp-validation-for="Location.City" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Location.State">State</label>
+        <input class="form-control" asp-for="Location.State" type="text" />
+        <span asp-validation-for="Location.State" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="ArtistId">Artist</label>
+        <select asp-for="ArtistId" asp-items="Model.Artists"></select>
+        <span asp-validation-for="Name" class="text-danger"></span>
+
+        <a class="btn btn-primary" asp-controller="Artist" asp-action="Add">New Artiste</a>
+    </div>
+    <br />
+
+    <input type="submit" value="Add Festival" />
+</form>

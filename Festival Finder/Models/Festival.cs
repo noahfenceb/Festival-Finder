@@ -7,23 +7,26 @@ namespace Festival_Finder.Models
 		public string? Name { get; set; }
 		public string? Description { get; set; }
         public string? ImageUrl { get; set; }
-		public int ArtisteId { get; set; }
-		public IEnumerable<Artist>? Artist { get; set; }
-		public int LocationId { get; set; }
+		public int ArtistId { get; set; }
+		public ICollection<Artist> Artists { get; set; }
+        public DateTime Date { get; set; }
+        public int LocationId { get; set; }
 		public Location? Location { get; set; }
 
 		public Festival()
 		{
 		}
 
-        public Festival(string name, string description, int artisteId, ICollection<Artist> artist, int locationId, Location location)
+        public Festival(string name, string description, int artistId, ICollection<Artist> artists, int locationId, Location location, DateTime date)
         {
             Name = name;
             Description = description;
-            ArtisteId = artisteId;
-            Artist = artist;
+            ArtistId = artistId;
+            Artists = artists;
             LocationId = locationId;
             Location = location;
+            Date = date;
+
         }
 
         public override bool Equals(object? obj)
