@@ -22,7 +22,7 @@ namespace Festival_Finder.Controllers
 
         public IActionResult Detail(int? id)
         {
-            Festival festival = context.Festivals.Find(id);
+            Festival festival = context.Festivals.Include(j => j.Location).Single(j => j.Id == id);
             return View(festival);
 
         }
@@ -59,5 +59,18 @@ namespace Festival_Finder.Controllers
             }
             return View(addFestivalViewModel);
         }
+
+        public IActionResult Edit(int? id)
+        {
+            if (id == null || id == 0)
+            {
+                return NotFound();
+            }
+            Festival festival = context.Festivals.Find(id);
+
+            return View(festival);
+        }
+
+
     }
 }
