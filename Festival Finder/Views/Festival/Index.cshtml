@@ -1,0 +1,43 @@
+﻿@model List<Festival>
+
+
+<div class="row py-lg-5 text-center">
+    <div class="col-lg-6 col-md-8 mx-auto">
+        <h1 class="fw-light">Festivals</h1>
+        <p class="lead text-muted">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don’t simply skip over it entirely.</p>
+        <p>
+            <a href="#" class="btn btn-primary my-2">Main call to action</a>
+            <a href="#" class="btn btn-secondary my-2">Secondary action</a>
+        </p>
+    </div>
+</div>
+<div class="py-5">
+    <div class="container">
+        <a class="btn btn-primary" asp-controller="Festival" asp-action="Create">Add Festival</a>
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+
+            @foreach(Festival festival in Model)
+            {
+                <div class="col-4">
+                    <div class="card shadow-sm">
+                        <img class="card-img-top" src="@festival.ImageUrl" alt="Card image cap">
+
+                        <div class="card-body">
+                            <p class="text-muted">Location: @festival.Location.City</p>
+                            <p class="card-text">@festival.Description</p>
+                           @* <p class="card-text">Artist: @festival.Artist.</p>*@
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <a class="btn btn-sm btn-outline-secondary" asp-controller="Festival" asp-action="Detail" asp-route-id = "@festival.Id">View</a>
+                                    <a type="button" class="btn btn-sm btn-outline-secondary" asp-controller="Festival" asp-action="Edit">Edit</a>
+                                </div>
+                                <small class="text-muted">@festival.Date</small>
+                             </div>
+                         </div>
+                     </div>
+                 </div>
+            }
+            
+        </div>
+    </div>
+</div>

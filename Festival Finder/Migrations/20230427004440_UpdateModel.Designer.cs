@@ -3,6 +3,7 @@ using System;
 using Festival_Finder.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,29 +11,16 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Festival_Finder.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230427004440_UpdateModel")]
+    partial class UpdateModel
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("ProductVersion", "7.0.5")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
-
-            modelBuilder.Entity("ArtistFestival", b =>
-                {
-                    b.Property<int>("ArtistsId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("FestivalsId")
-                        .HasColumnType("int");
-
-                    b.HasKey("ArtistsId", "FestivalsId");
-
-                    b.HasIndex("FestivalsId");
-
-                    b.ToTable("FestivalList", (string)null);
-                });
 
             modelBuilder.Entity("Festival_Finder.Models.AppUser", b =>
                 {
@@ -90,6 +78,8 @@ namespace Festival_Finder.Migrations
 
                     b.HasIndex("AppUserId");
 
+                    b.HasIndex("FestivalId");
+
                     b.HasIndex("LocationId");
 
                     b.ToTable("Artists");
@@ -104,7 +94,7 @@ namespace Festival_Finder.Migrations
                     b.Property<int?>("AppUserId")
                         .HasColumnType("int");
 
-                    b.Property<int>("ArtistId")
+                    b.Property<int>("ArtisteId")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("Date")
@@ -154,21 +144,6 @@ namespace Festival_Finder.Migrations
                     b.ToTable("Locations");
                 });
 
-            modelBuilder.Entity("ArtistFestival", b =>
-                {
-                    b.HasOne("Festival_Finder.Models.Artist", null)
-                        .WithMany()
-                        .HasForeignKey("ArtistsId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Festival_Finder.Models.Festival", null)
-                        .WithMany()
-                        .HasForeignKey("FestivalsId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
             modelBuilder.Entity("Festival_Finder.Models.AppUser", b =>
                 {
                     b.HasOne("Festival_Finder.Models.Location", "Location")
@@ -184,9 +159,17 @@ namespace Festival_Finder.Migrations
                         .WithMany("Artists")
                         .HasForeignKey("AppUserId");
 
+                    b.HasOne("Festival_Finder.Models.Festival", "Festival")
+                        .WithMany("Artist")
+                        .HasForeignKey("FestivalId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("Festival_Finder.Models.Location", "Location")
                         .WithMany()
                         .HasForeignKey("LocationId");
+
+                    b.Navigation("Festival");
 
                     b.Navigation("Location");
                 });
@@ -211,6 +194,11 @@ namespace Festival_Finder.Migrations
                     b.Navigation("Artists");
 
                     b.Navigation("Festivals");
+                });
+
+            modelBuilder.Entity("Festival_Finder.Models.Festival", b =>
+                {
+                    b.Navigation("Artist");
                 });
 #pragma warning restore 612, 618
         }

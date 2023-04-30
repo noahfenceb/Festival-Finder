@@ -18,11 +18,16 @@ namespace Festival_Finder.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            //One to many
-           
+            //set up your connection for one to many (employer to jobs)
+            //modelBuilder.Entity<Job>()
+            //.HasOne(p => p.Employer)
+            //.WithMany(b => b.Jobs);
 
-            //Many to Many
-
+            //set up your connection for many to many (skills to jobs)
+            modelBuilder.Entity<Festival>()
+            .HasMany(e => e.Artists)
+            .WithMany(e => e.Festivals)
+            .UsingEntity(j => j.ToTable("FestivalList"));
         }
     }
 

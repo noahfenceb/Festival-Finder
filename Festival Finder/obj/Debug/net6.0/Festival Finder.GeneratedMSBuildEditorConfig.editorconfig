@@ -16,6 +16,30 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\LaunchCode\Desktop\New folder\Festival-Finder\Festival Finder
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/LaunchCode/Desktop/New folder/Festival-Finder/Festival Finder/Views/Artist/Add.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXJ0aXN0XEFkZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/LaunchCode/Desktop/New folder/Festival-Finder/Festival Finder/Views/Artist/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXJ0aXN0XEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/LaunchCode/Desktop/New folder/Festival-Finder/Festival Finder/Views/Festival/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmVzdGl2YWxcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/LaunchCode/Desktop/New folder/Festival-Finder/Festival Finder/Views/Festival/Detail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmVzdGl2YWxcRGV0YWlsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/LaunchCode/Desktop/New folder/Festival-Finder/Festival Finder/Views/Festival/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmVzdGl2YWxcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/LaunchCode/Desktop/New folder/Festival-Finder/Festival Finder/Views/Festival/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmVzdGl2YWxcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/LaunchCode/Desktop/New folder/Festival-Finder/Festival Finder/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

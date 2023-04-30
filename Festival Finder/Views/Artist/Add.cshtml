@@ -1,0 +1,14 @@
+﻿@using Festival_Finder.ViewModel
+@model AddArtistViewModel
+
+<h1>Add new Arist</h1>
+
+
+<form asp-controller="Artist" asp-action="Add" method="post">
+    <div class="form-group">
+        <label asp-for="Name">Name</label>
+        <input class="form-control" asp-for="Name" type="text" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+    <input type="submit" value="Add Artist" class="btn btn-primary"/>
+</form>

@@ -8,18 +8,17 @@ namespace Festival_Finder.Models
         public string? ImageUrl { get; set; }
 		public Location? Location { get; set; }
 		public int FestivalId { get; set; }
-		public Festival? Festival { get; set; }
+		public List<Festival> Festivals { get; set; }
 
 		public Artist()
 		{
 		}
 
-        public Artist(string name, Location location, int festivalId, Festival? festival)
+        public Artist(string name, Location location, List<Festival>? festivals)
         {
             Name = name;
             Location = location;
-            FestivalId = festivalId;
-            Festival = festival;
+            Festivals = festivals;
         }
 
         public override bool Equals(object? obj)
