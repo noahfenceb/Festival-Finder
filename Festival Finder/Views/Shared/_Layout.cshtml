@@ -29,6 +29,10 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Artist" asp-action="Index">Artists</a>
                         </li>
+                        <form class="d-flex" role="search" asp-controller="Festival" asp-action="Search">
+                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-outline-success" type="submit">Search</button>
+                        </form>
                     </ul>
                 </div>
             </div>

@@ -7,32 +7,35 @@
             <div class="project-info-box mt-0">
                 <h5>@Model.Name</h5>
                 <p class="mb-0">@Model.Description</p>
-            </div><!-- / project-info-box -->
+            </div><
 
-            <div class="project-info-box">
+            <div class="project-info-box" mb-4>
                 <p><b>City:</b>@Model.Location.City</p>
                 <p><b>Street:</b>@Model.Location.Street</p>
                 <p><b>State:</b>@Model.Location.State</p>
-                @*<p><b>Artist:</b> @Model.</p>*@
-                <p class="mb-0"><b>Budget:</b> $500</p>
-            </div><!-- / project-info-box -->
+               
+            </div>
 
-            <div class="project-info-box mt-0 mb-0">
-                <p class="mb-0">
-                    <span class="fw-bold mr-10 va-middle hide-mobile">Share:</span>
-                    <a href="#x" class="btn btn-xs btn-facebook btn-circle btn-icon mr-5 mb-0"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#x" class="btn btn-xs btn-twitter btn-circle btn-icon mr-5 mb-0"><i class="fab fa-twitter"></i></a>
-                    <a href="#x" class="btn btn-xs btn-pinterest btn-circle btn-icon mr-5 mb-0"><i class="fab fa-pinterest"></i></a>
-                    <a href="#x" class="btn btn-xs btn-linkedin btn-circle btn-icon mr-5 mb-0"><i class="fab fa-linkedin-in"></i></a>
-                </p>
-            </div><!-- / project-info-box -->
+            <div>
+                <div class="row">
+                    
+                        <a asp-controller="Festival" asp-action="Edit" class="btn btn-primary col-3">Update</a>
+
+                    <a class ="col-3 btn btn-danger">Delete</a>
+                    
+                </div>
+                
+                
+            </div>
+            
+            
         </div><!-- / column -->
 
         <div class="col-md-7">
-            <img src="@Model.ImageUrl" alt="project-image" class="rounded">
+            <img src="@Model.ImageUrl" alt="project-image" class="rounded" width="500" height="500">
             <div class="project-info-box">
-                <p><b>Categories:</b> Design, Illustration</p>
-                <p><b>Skills:</b> Illustrator</p>
+                <p><b>Genre:</b> Country Music Festival</p>
+                
             </div><!-- / project-info-box -->
         </div><!-- / column -->
     </div>

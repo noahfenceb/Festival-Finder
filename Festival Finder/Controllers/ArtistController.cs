@@ -35,7 +35,7 @@ namespace Festival_Finder.Controllers
             {
                 context.Artists.Add(artist);
                 context.SaveChanges();
-                return Redirect("/Artist/");
+                return RedirectToAction("Create", "Festival");
             }
 
             return View("Add", artist);

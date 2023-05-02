@@ -23,7 +23,11 @@
                         <img class="card-img-top" src="@festival.ImageUrl" alt="Card image cap">
 
                         <div class="card-body">
-                            <p> Artist: @festival.Artists</p>
+                            @foreach(var artist in festival.Artists)
+                            {
+                                <p> Artist: @artist.Name</p>
+                            }
+                            
                             <p class="text-muted">Location: @festival.Location.City</p>
                             <p class="card-text">@festival.Description</p>
                            @* <p class="card-text">Artist: @festival.Artist.</p>*@

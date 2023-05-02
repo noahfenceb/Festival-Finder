@@ -71,6 +71,20 @@ namespace Festival_Finder.Controllers
             return View(festival);
         }
 
+        public IActionResult Search(string searchTerm)
+        {
+            var festivals = context.Festivals.Include(f => f.Artists).Where(f => f.Location.City.Contains(searchTerm) ||
+            f.Description.Contains(searchTerm) || f.Artists.Any(a => a.Name.Contains(searchTerm))).ToList();
+
+            return View(festivals);
+        }
+
+        //[HttpPost]
+        //public IActionResult Edit(AddArtistFestivalViewModel viewModel)
+        //{
+
+        //}
+
 
     }
 }
