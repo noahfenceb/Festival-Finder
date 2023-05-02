@@ -16,7 +16,7 @@ namespace Festival_Finder.Controllers
         }
         public IActionResult Index()
         {
-            List<Festival> festivals = context.Festivals.Include(j => j.Location).ToList();
+            List<Festival> festivals = context.Festivals.Include(j => j.Location).Include(k => k.Artists).ToList();
             return View(festivals);
         }
 

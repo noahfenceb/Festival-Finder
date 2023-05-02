@@ -83,3 +83,57 @@ C:\Users\LaunchCode\Desktop\New folder\Festival-Finder\Festival Finder\obj\Debug
 C:\Users\LaunchCode\Desktop\New folder\Festival-Finder\Festival Finder\obj\Debug\net6.0\Festival Finder.csproj.CopyComplete
 C:\Users\LaunchCode\Desktop\New folder\Festival-Finder\Festival Finder\obj\Debug\net6.0\Festival Finder.genruntimeconfig.cache
 C:\Users\LaunchCode\Desktop\New folder\Festival-Finder\Festival Finder\obj\Debug\net6.0\ref\Festival Finder.dll
+C:\Users\LaunchCode\Desktop\New folder\New folder\Festival-Finder\Festival Finder\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\LaunchCode\Desktop\New folder\New folder\Festival-Finder\Festival Finder\bin\Debug\net6.0\appsettings.json
+C:\Users\LaunchCode\Desktop\New folder\New folder\Festival-Finder\Festival Finder\bin\Debug\net6.0\Festival Finder.staticwebassets.runtime.json
+C:\Users\LaunchCode\Desktop\New folder\New folder\Festival-Finder\Festival Finder\bin\Debug\net6.0\Festival Finder.exe
+C:\Users\LaunchCode\Desktop\New folder\New folder\Festival-Finder\Festival Finder\bin\Debug\net6.0\Festival Finder.deps.json
+C:\Users\LaunchCode\Desktop\New folder\New folder\Festival-Finder\Festival Finder\bin\Debug\net6.0\Festival Finder.runtimeconfig.json
+C:\Users\LaunchCode\Desktop\New folder\New folder\Festival-Finder\Festival Finder\bin\Debug\net6.0\Festival Finder.dll
+C:\Users\LaunchCode\Desktop\New folder\New folder\Festival-Finder\Festival Finder\bin\Debug\net6.0\Festival Finder.pdb
+C:\Users\LaunchCode\Desktop\New folder\New folder\Festival-Finder\Festival Finder\bin\Debug\net6.0\Humanizer.dll
+C:\Users\LaunchCode\Desktop\New folder\New folder\Festival-Finder\Festival Finder\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\LaunchCode\Desktop\New folder\New folder\Festival-Finder\Festival Finder\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\LaunchCode\Desktop\New folder\New folder\Festival-Finder\Festival Finder\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\LaunchCode\Desktop\New folder\New folder\Festival-Finder\Festival Finder\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\LaunchCode\Desktop\New folder\New folder\Festival-Finder\Festival Finder\bin\Debug\net6.0\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\LaunchCode\Desktop\New folder\New folder\Festival-Finder\Festival Finder\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\LaunchCode\Desktop\New folder\New folder\Festival-Finder\Festival Finder\bin\Debug\net6.0\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\LaunchCode\Desktop\New folder\New folder\Festival-Finder\Festival Finder\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\LaunchCode\Desktop\New folder\New folder\Festival-Finder\Festival Finder\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\LaunchCode\Desktop\New folder\New folder\Festival-Finder\Festival Finder\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\LaunchCode\Desktop\New folder\New folder\Festival-Finder\Festival Finder\bin\Debug\net6.0\Microsoft.Extensions.Logging.dll
+C:\Users\LaunchCode\Desktop\New folder\New folder\Festival-Finder\Festival Finder\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\LaunchCode\Desktop\New folder\New folder\Festival-Finder\Festival Finder\bin\Debug\net6.0\Microsoft.Extensions.Options.dll
+C:\Users\LaunchCode\Desktop\New folder\New folder\Festival-Finder\Festival Finder\bin\Debug\net6.0\Microsoft.Extensions.Primitives.dll
+C:\Users\LaunchCode\Desktop\New folder\New folder\Festival-Finder\Festival Finder\bin\Debug\net6.0\Mono.TextTemplating.dll
+C:\Users\LaunchCode\Desktop\New folder\New folder\Festival-Finder\Festival Finder\bin\Debug\net6.0\MySqlConnector.dll
+C:\Users\LaunchCode\Desktop\New folder\New folder\Festival-Finder\Festival Finder\bin\Debug\net6.0\Pomelo.EntityFrameworkCore.MySql.dll
+C:\Users\LaunchCode\Desktop\New folder\New folder\Festival-Finder\Festival Finder\bin\Debug\net6.0\System.CodeDom.dll
+C:\Users\LaunchCode\Desktop\New folder\New folder\Festival-Finder\Festival Finder\bin\Debug\net6.0\System.Text.Encodings.Web.dll
+C:\Users\LaunchCode\Desktop\New folder\New folder\Festival-Finder\Festival Finder\bin\Debug\net6.0\System.Text.Json.dll
+C:\Users\LaunchCode\Desktop\New folder\New folder\Festival-Finder\Festival Finder\bin\Debug\net6.0\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
+C:\Users\LaunchCode\Desktop\New folder\New folder\Festival-Finder\Festival Finder\obj\Debug\net6.0\Festival Finder.csproj.AssemblyReference.cache
+C:\Users\LaunchCode\Desktop\New folder\New folder\Festival-Finder\Festival Finder\obj\Debug\net6.0\Festival Finder.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\LaunchCode\Desktop\New folder\New folder\Festival-Finder\Festival Finder\obj\Debug\net6.0\Festival Finder.AssemblyInfoInputs.cache
+C:\Users\LaunchCode\Desktop\New folder\New folder\Festival-Finder\Festival Finder\obj\Debug\net6.0\Festival Finder.AssemblyInfo.cs
+C:\Users\LaunchCode\Desktop\New folder\New folder\Festival-Finder\Festival Finder\obj\Debug\net6.0\Festival Finder.csproj.CoreCompileInputs.cache
+C:\Users\LaunchCode\Desktop\New folder\New folder\Festival-Finder\Festival Finder\obj\Debug\net6.0\Festival Finder.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\LaunchCode\Desktop\New folder\New folder\Festival-Finder\Festival Finder\obj\Debug\net6.0\Festival Finder.RazorAssemblyInfo.cache
+C:\Users\LaunchCode\Desktop\New folder\New folder\Festival-Finder\Festival Finder\obj\Debug\net6.0\Festival Finder.RazorAssemblyInfo.cs
+C:\Users\LaunchCode\Desktop\New folder\New folder\Festival-Finder\Festival Finder\obj\Debug\net6.0\staticwebassets\msbuild.Festival Finder.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\LaunchCode\Desktop\New folder\New folder\Festival-Finder\Festival Finder\obj\Debug\net6.0\staticwebassets\msbuild.build.Festival Finder.props
+C:\Users\LaunchCode\Desktop\New folder\New folder\Festival-Finder\Festival Finder\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.Festival Finder.props
+C:\Users\LaunchCode\Desktop\New folder\New folder\Festival-Finder\Festival Finder\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.Festival Finder.props
+C:\Users\LaunchCode\Desktop\New folder\New folder\Festival-Finder\Festival Finder\obj\Debug\net6.0\staticwebassets.pack.json
+C:\Users\LaunchCode\Desktop\New folder\New folder\Festival-Finder\Festival Finder\obj\Debug\net6.0\staticwebassets.build.json
+C:\Users\LaunchCode\Desktop\New folder\New folder\Festival-Finder\Festival Finder\obj\Debug\net6.0\staticwebassets.development.json
+C:\Users\LaunchCode\Desktop\New folder\New folder\Festival-Finder\Festival Finder\obj\Debug\net6.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\LaunchCode\Desktop\New folder\New folder\Festival-Finder\Festival Finder\obj\Debug\net6.0\scopedcss\bundle\Festival Finder.styles.css
+C:\Users\LaunchCode\Desktop\New folder\New folder\Festival-Finder\Festival Finder\obj\Debug\net6.0\scopedcss\projectbundle\Festival Finder.bundle.scp.css
+C:\Users\LaunchCode\Desktop\New folder\New folder\Festival-Finder\Festival Finder\obj\Debug\net6.0\Festival Finder.csproj.CopyComplete
+C:\Users\LaunchCode\Desktop\New folder\New folder\Festival-Finder\Festival Finder\obj\Debug\net6.0\Festival Finder.dll
+C:\Users\LaunchCode\Desktop\New folder\New folder\Festival-Finder\Festival Finder\obj\Debug\net6.0\refint\Festival Finder.dll
+C:\Users\LaunchCode\Desktop\New folder\New folder\Festival-Finder\Festival Finder\obj\Debug\net6.0\Festival Finder.pdb
+C:\Users\LaunchCode\Desktop\New folder\New folder\Festival-Finder\Festival Finder\obj\Debug\net6.0\Festival Finder.genruntimeconfig.cache
+C:\Users\LaunchCode\Desktop\New folder\New folder\Festival-Finder\Festival Finder\obj\Debug\net6.0\ref\Festival Finder.dll

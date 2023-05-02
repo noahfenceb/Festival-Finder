@@ -31,7 +31,7 @@ namespace Festival_Finder.Migrations
 
                     b.HasIndex("FestivalsId");
 
-                    b.ToTable("FestivalList", (string)null);
+                    b.ToTable("ArtistFestival");
                 });
 
             modelBuilder.Entity("Festival_Finder.Models.AppUser", b =>
@@ -72,9 +72,6 @@ namespace Festival_Finder.Migrations
                         .HasColumnType("int");
 
                     b.Property<int?>("AppUserId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("FestivalId")
                         .HasColumnType("int");
 
                     b.Property<string>("ImageUrl")

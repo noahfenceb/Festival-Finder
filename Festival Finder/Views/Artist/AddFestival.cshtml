@@ -1,0 +1,14 @@
+﻿@using Festival_Finder.ViewModel
+@model AddArtistFestivalViewModel
+
+<h1>Add Tag to @Model.Festival.Name! 🙂</h1>
+
+<form asp-controller="Tag" asp-action="AddAnimal" method="post">
+    <input type="hidden" value="@Model.Festival.Id" name="AnimalId" />
+    <div class="form-group">
+        <label asp-for="ArtistId">Tag</label>
+        <select asp-for="ArtistId" asp-items="Model.Artists"></select>
+        <span asp-validation-for="ArtistId" class="text-danger"></span>
+    </div>
+    <input type="submit" value="Add Tag(s)" class="btn btn-success" />
+</form>

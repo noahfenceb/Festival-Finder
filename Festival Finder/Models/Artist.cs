@@ -7,14 +7,13 @@ namespace Festival_Finder.Models
 		public string? Name { get; set; }
         public string? ImageUrl { get; set; }
 		public Location? Location { get; set; }
-		public int FestivalId { get; set; }
-		public List<Festival> Festivals { get; set; }
+        public ICollection<Festival>? Festivals { get; set; }
 
-		public Artist()
+        public Artist()
 		{
 		}
 
-        public Artist(string name, Location location, List<Festival>? festivals)
+        public Artist(string name, Location location, ICollection<Festival>? festivals)
         {
             Name = name;
             Location = location;

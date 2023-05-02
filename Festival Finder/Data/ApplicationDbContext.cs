@@ -24,10 +24,10 @@ namespace Festival_Finder.Data
             //.WithMany(b => b.Jobs);
 
             //set up your connection for many to many (skills to jobs)
-            modelBuilder.Entity<Festival>()
-            .HasMany(e => e.Artists)
-            .WithMany(e => e.Festivals)
-            .UsingEntity(j => j.ToTable("FestivalList"));
+            //modelBuilder.Entity<Festival>()
+            //.HasMany(e => e.Artists)
+            //.WithMany(e => e.Festivals)
+            //.UsingEntity(j => j.ToTable("FestivalList"));
         }
     }
 

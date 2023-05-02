@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Festival_Finder.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230426185937_InitialMigration")]
-    partial class InitialMigration
+    [Migration("20230502180305_UpdateDatabaseModels")]
+    partial class UpdateDatabaseModels
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -21,6 +21,21 @@ namespace Festival_Finder.Migrations
             modelBuilder
                 .HasAnnotation("ProductVersion", "7.0.5")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
+
+            modelBuilder.Entity("ArtistFestival", b =>
+                {
+                    b.Property<int>("ArtistsId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("FestivalsId")
+                        .HasColumnType("int");
+
+                    b.HasKey("ArtistsId", "FestivalsId");
+
+                    b.HasIndex("FestivalsId");
+
+                    b.ToTable("ArtistFestival");
+                });
 
             modelBuilder.Entity("Festival_Finder.Models.AppUser", b =>
                 {
@@ -62,9 +77,6 @@ namespace Festival_Finder.Migrations
                     b.Property<int?>("AppUserId")
                         .HasColumnType("int");
 
-                    b.Property<int>("FestivalId")
-                        .HasColumnType("int");
-
                     b.Property<string>("ImageUrl")
                         .HasColumnType("longtext");
 
@@ -77,8 +89,6 @@ namespace Festival_Finder.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("AppUserId");
-
-                    b.HasIndex("FestivalId");
 
                     b.HasIndex("LocationId");
 
@@ -94,8 +104,11 @@ namespace Festival_Finder.Migrations
                     b.Property<int?>("AppUserId")
                         .HasColumnType("int");
 
-                    b.Property<int>("ArtisteId")
+                    b.Property<int>("ArtistId")
                         .HasColumnType("int");
+
+                    b.Property<DateTime>("Date")
+                        .HasColumnType("datetime(6)");
 
                     b.Property<string>("Description")
                         .HasColumnType("longtext");
@@ -141,6 +154,21 @@ namespace Festival_Finder.Migrations
                     b.ToTable("Locations");
                 });
 
+            modelBuilder.Entity("ArtistFestival", b =>
+                {
+                    b.HasOne("Festival_Finder.Models.Artist", null)
+                        .WithMany()
+                        .HasForeignKey("ArtistsId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Festival_Finder.Models.Festival", null)
+                        .WithMany()
+                        .HasForeignKey("FestivalsId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
             modelBuilder.Entity("Festival_Finder.Models.AppUser", b =>
                 {
                     b.HasOne("Festival_Finder.Models.Location", "Location")
@@ -156,17 +184,9 @@ namespace Festival_Finder.Migrations
                         .WithMany("Artists")
                         .HasForeignKey("AppUserId");
 
-                    b.HasOne("Festival_Finder.Models.Festival", "Festival")
-                        .WithMany("Artist")
-                        .HasForeignKey("FestivalId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("Festival_Finder.Models.Location", "Location")
                         .WithMany()
                         .HasForeignKey("LocationId");
-
-                    b.Navigation("Festival");
 
                     b.Navigation("Location");
                 });
@@ -191,11 +211,6 @@ namespace Festival_Finder.Migrations
                     b.Navigation("Artists");
 
                     b.Navigation("Festivals");
-                });
-
-            modelBuilder.Entity("Festival_Finder.Models.Festival", b =>
-                {
-                    b.Navigation("Artist");
                 });
 #pragma warning restore 612, 618
         }

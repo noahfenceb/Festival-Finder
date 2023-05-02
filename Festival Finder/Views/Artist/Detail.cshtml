@@ -1,0 +1,16 @@
+﻿@model Festival_Finder.Models.Artist
+
+@if (Model.Festivals.ToList().Count == 0)
+{
+    <h1>No Festival</h1>
+}
+else
+{
+    <h1>Artist: @Model.Name</h1>
+    <ul>
+        @foreach (var artistTag in Model.Festivals)
+        {
+            <li>@artistTag.Name</li>
+        }
+    </ul>
+}
