@@ -24,68 +24,131 @@ namespace Festival_Finder.Controllers
 
         public IActionResult Add()
         {
-            Artist artist = new Artist();
-            return View(artist);
+            //Artist artist = new Artist();
+            return View();
         }
 
         [HttpPost]
-        public IActionResult Add(Artist artist)
+        public IActionResult Add(AddArtistViewModel addArtistViewModel)
         {
             if (ModelState.IsValid)
             {
+                //Mapping artist viewmodel to model
+                var artist = new Artist
+                {
+                    Name = addArtistViewModel.Name
+                };
                 context.Artists.Add(artist);
                 context.SaveChanges();
                 return RedirectToAction("Create", "Festival");
             }
 
-            return View("Add", artist);
+            return View("Add");
         }
 
-        // localhost:[port]/Artist/AddFestival/{AnimalId?}
-        public IActionResult AddFestival(int id)
+        public IActionResult Edit(int id)
         {
-            Festival theFestival = context.Festivals.Find(id);
-            List<Artist> possibleArtists = context.Artists.ToList();
+            var artist = context.Artists.FirstOrDefault(x => x.Id == id);
 
-            AddArtistFestivalViewModel viewModel = new AddArtistFestivalViewModel(theFestival, possibleArtists);
+            if(artist != null)
+            {
+                var editArtistViewModel = new EditArtistViewModel
+                {
+                    Id = artist.Id,
+                    Name = artist.Name
+                };
+                return View(editArtistViewModel);
+            }
 
-            return View(viewModel);
+            return View("List");
         }
 
         [HttpPost]
-        public IActionResult AddFestival(AddArtistFestivalViewModel viewModel)
+        public IActionResult Edit(EditArtistViewModel editArtistViewModel)
         {
-            if (ModelState.IsValid)
+            //convert back to a artist
+            var artist = new Artist
             {
-                int festivalId = viewModel.FestivalId;
-                int artistId = viewModel.ArtistId;
+                Id = editArtistViewModel.Id,
+                Name = editArtistViewModel.Name
+            };
+            var existingArtist = context.Artists.Find(artist.Id);
+            if(existingArtist != null)
+            {
+                existingArtist.Name = artist.Name;
 
-                Festival theFestival = context.Festivals
-                    .Include(a => a.Artists)
-                    .Where(a => a.Id == festivalId)
-                    .First();
-
-                Artist theArtist = context.Artists
-                    .Where(t => t.Id == artistId)
-                    .First();
-
-                theFestival.Artists.Add(theArtist);
+                //Save Changes
                 context.SaveChanges();
-                return Redirect("/Festivals/Detail/" + festivalId);
+                //Success notification
+                return RedirectToAction("Index");
+            }
+            //Error Notification
+            return RedirectToAction("Edit", new { id = editArtistViewModel.Id});
+        }
+
+        public IActionResult Delete(EditArtistViewModel editArtistViewModel)
+        {
+            var existingArtist = context.Artists.Find(editArtistViewModel.Id);
+
+            if(existingArtist != null)
+            {
+                context.Artists.Remove(existingArtist);
+                context.SaveChanges();
+
+                //Success Notification
+                return RedirectToAction("Index");
             }
 
-            return View(viewModel);
+            //Fail Notification
+            return RedirectToAction("Edit", new { id = editArtistViewModel.Id });
         }
 
-        public IActionResult Detail(int id)
-        {
-            Artist theArtist = context.Artists
-                .Include(a => a.Festivals)
-                .Where(t => t.Id == id)
-                .First();
 
-            return View(theArtist);
-        }
+        //// localhost:[port]/Artist/AddFestival/{AnimalId?}
+        //public IActionResult AddFestival(int id)
+        //{
+        //    Festival theFestival = context.Festivals.Find(id);
+        //    List<Artist> possibleArtists = context.Artists.ToList();
+
+        //    AddArtistFestivalViewModel viewModel = new AddArtistFestivalViewModel(theFestival, possibleArtists);
+
+        //    return View(viewModel);
+        //}
+
+        //[HttpPost]
+        //public IActionResult AddFestival(AddArtistFestivalViewModel viewModel)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        int festivalId = viewModel.FestivalId;
+        //        int artistId = viewModel.ArtistId;
+
+        //        Festival theFestival = context.Festivals
+        //            .Include(a => a.Artists)
+        //            .Where(a => a.Id == festivalId)
+        //            .First();
+
+        //        Artist theArtist = context.Artists
+        //            .Where(t => t.Id == artistId)
+        //            .First();
+
+        //        theFestival.Artists.Add(theArtist);
+        //        context.SaveChanges();
+        //        return Redirect("/Festivals/Detail/" + festivalId);
+        //    }
+
+        //    return View(viewModel);
+        //}
+
+        //public IActionResult Detail(int id)
+        //{
+        //    Artist theArtist = context.Artists
+        //        .Include(a => a.Festivals)
+        //        .Where(t => t.Id == id)
+        //        .First();
+
+        //    return View(theArtist);
+        //}
         //    public IActionResult Index()
         //    {
         //        return View();

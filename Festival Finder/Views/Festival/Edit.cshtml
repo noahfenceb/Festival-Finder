@@ -1,5 +1,62 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿@using Festival_Finder.ViewModel
+@model EditFestivalViewModel
+
+<h1>Edit Festival</h1>
+
+<div class="container py-5">
+    @if(Model != null)
+    {
+
+        <form method="post" asp-route-id="">
+            <input type="hidden" asp-for="Id">
+            <div class="form-group">
+                <label asp-for="Name">Name</label>
+                <input class="form-control" asp-for="Name" type="text" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Description">Description</label>
+                <input class="form-control" asp-for="Description" type="text" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ImageUrl">Image</label>
+                <input class="form-control" asp-for="ImageUrl" type="text" />
+                <span asp-validation-for="ImageUrl" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Location.Street">Street</label>
+                <input class="form-control" asp-for="Location.Street" type="text" />
+                <span asp-validation-for="Location.Street" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Location.City">City</label>
+                <input class="form-control" asp-for="Location.City" type="text" />
+                <span asp-validation-for="Location.City" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Location.State">State</label>
+                <input class="form-control" asp-for="Location.State" type="text" />
+                <span asp-validation-for="Location.State" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Artist</label>
+                <select class="form-select" asp-for="SelectedArtists" asp-items="@Model.Artists"></select>
+                <span asp-validation-for="Name" class="text-danger"></span>
+
+            </div>
+            <br />
+            <div>
+                <div class="d-flex">
+                    <button type="submit" class="btn btn-primary">Update</button>
+                    <button type="submit" class="btn btn-danger ms-3" asp-controller="Festival" asp-action="Delete">Delete</button>
+                </div>
+            </div>
+        </form>
+    }
+    else
+    {
+        <p>No Festival Found</p>
+    }
+</div>

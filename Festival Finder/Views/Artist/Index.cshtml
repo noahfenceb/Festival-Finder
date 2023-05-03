@@ -12,12 +12,14 @@ else
         <tr>
             <th scope="col">ID
             <th scope="col">Artist Name</th>
+            <th scope="col">Action</th>
         </tr>
         @foreach (Artist artist in Model)
         {
             <tr>
                 <td>@artist.Id</td>
                 <td><a asp-controller="Tag" asp-action="Detail" asp-route-id="@artist.Id">@artist.Name</a></td>
+                <td><a asp-controller="Artist" asp-action="Edit" asp-route-id="@artist.Id">Edit</a></td>
             </tr>
         }
     </table>
