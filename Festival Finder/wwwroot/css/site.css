@@ -16,3 +16,23 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+.selected {
+    background-color: #ffc107;
+    height: 450px;
+    overflow-y: hidden;
+}
+    
+.selected, .selected:hover {
+    text-decoration: none;
+}
+
+        
+.selected:hover {
+    opacity: 0.8;
+}
+
+.card-pic{
+    width: 98%;
+    height: 50%;
+}

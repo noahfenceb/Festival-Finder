@@ -3,40 +3,43 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-md-5">
+        <div class="col-md-5 my-5">
             <div class="project-info-box mt-0">
-                <h5>@Model.Name</h5>
-                <p class="mb-0">@Model.Description</p>
-            </div><
+                <h3 class="text-white my-4 font-weight-bold">@Model.Name</h3>
+                <p class="mb-2 text-white bg-success">@Model.Description</p>
+            </div>
 
             <div class="project-info-box" mb-4>
-                <p><b>City:</b>@Model.Location.City</p>
-                <p><b>Street:</b>@Model.Location.Street</p>
-                <p><b>State:</b>@Model.Location.State</p>
+                <p class="text-white mb-2"><b>City: </b>@Model.Location.City</p>
+                <p class="text-white mb-2"><b>Street: </b>@Model.Location.Street</p>
+                <p class="text-white mb-2"><b>State: </b>@Model.Location.State</p>
                
             </div>
 
             <div>
-                <div class="row ms-3 d-flex">
+                <div class="row d-flex">
+                    <div class="mt-3">
+                    <a asp-controller="Festival" asp-action="Edit" class="btn btn-primary col-3" asp-route-id="@Model.Id">Update</a>
                     
-                        <a asp-controller="Festival" asp-action="Edit" class="btn btn-primary col-3" asp-route-id="@Model.Id">Update</a>
-
-                        <a class ="col-3 btn btn-danger" asp-controller="Festival" asp-action="Delete" asp-route-id="@Model.Id">Delete</a>
-                    
+                    <a class ="col-3 btn btn-danger" asp-controller="Festival" asp-action="Delete" asp-route-id="@Model.Id">Delete</a>
+                    </div>
+                    <div>
+                        <a class="btn btn-secondary my-4" asp-controller="Festival" asp-action="Index">Back To Festival</a>
+                    </div>
                 </div>
                 
                 
             </div>
             
             
-        </div><!-- / column -->
+        </div>
 
         <div class="col-md-7">
             <img src="@Model.ImageUrl" alt="project-image" class="rounded" width="500" height="500">
             <div class="project-info-box">
-                <p><b>Genre:</b> Country Music Festival</p>
+                <p class="text-white"><b>Genre:</b> Country Music Festival</p>
                 
-            </div><!-- / project-info-box -->
-        </div><!-- / column -->
+            </div>
+        </div>
     </div>
 </div>

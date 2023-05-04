@@ -1,11 +1,13 @@
 ﻿using Festival_Finder.Data;
 using Festival_Finder.Models;
 using Festival_Finder.ViewModel;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace Festival_Finder.Controllers
 {
+    [Authorize]
     public class ArtistController : Controller
     {
 

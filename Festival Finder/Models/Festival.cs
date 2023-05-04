@@ -12,8 +12,10 @@ namespace Festival_Finder.Models
         public DateTime Date { get; set; }
         public int LocationId { get; set; }
 		public Location? Location { get; set; }
+        public string? AppUserId { get; set; }
+        public AppUser? AppUser { get; set; }
 
-		public Festival()
+        public Festival()
 		{
 		}
 

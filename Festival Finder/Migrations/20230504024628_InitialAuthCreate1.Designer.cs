@@ -3,6 +3,7 @@ using System;
 using Festival_Finder.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Festival_Finder.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230504024628_InitialAuthCreate1")]
+    partial class InitialAuthCreate1
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -47,6 +50,7 @@ namespace Festival_Finder.Migrations
                         .HasColumnType("longtext");
 
                     b.Property<string>("Email")
+                        .IsRequired()
                         .HasMaxLength(256)
                         .HasColumnType("varchar(256)");
 
@@ -54,6 +58,7 @@ namespace Festival_Finder.Migrations
                         .HasColumnType("tinyint(1)");
 
                     b.Property<string>("ImageURL")
+                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<int?>("LocationId")
@@ -66,6 +71,7 @@ namespace Festival_Finder.Migrations
                         .HasColumnType("datetime(6)");
 
                     b.Property<string>("Name")
+                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<string>("NormalizedEmail")
@@ -78,6 +84,9 @@ namespace Festival_Finder.Migrations
 
                     b.Property<string>("PasswordHash")
                         .HasColumnType("longtext");
+
+                    b.Property<int>("Phone")
+                        .HasColumnType("int");
 
                     b.Property<string>("PhoneNumber")
                         .HasColumnType("longtext");
@@ -107,24 +116,6 @@ namespace Festival_Finder.Migrations
                         .HasDatabaseName("UserNameIndex");
 
                     b.ToTable("AspNetUsers", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            Id = "1",
-                            AccessFailedCount = 0,
-                            ConcurrencyStamp = "3fe9b664-7727-475e-8657-39bb277f62c6",
-                            Email = "admin@yahoo.com",
-                            EmailConfirmed = false,
-                            LockoutEnabled = false,
-                            NormalizedEmail = "ADMIN@YAHOO.COM",
-                            NormalizedUserName = "ADMIN@YAHOO.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEHpVbHQwE3pOZC8364RIq8UAdrlGuePQbgVFFxQraPKWreP0Tt9PWwgjdetS78s+Ng==",
-                            PhoneNumberConfirmed = false,
-                            SecurityStamp = "a7e89961-a550-4103-ad6f-13c3f1a8800f",
-                            TwoFactorEnabled = false,
-                            UserName = "admin@yahoo.com"
-                        });
                 });
 
             modelBuilder.Entity("Festival_Finder.Models.Artist", b =>
@@ -237,22 +228,6 @@ namespace Festival_Finder.Migrations
                         .HasDatabaseName("RoleNameIndex");
 
                     b.ToTable("AspNetRoles", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            Id = "1",
-                            ConcurrencyStamp = "1",
-                            Name = "Admin",
-                            NormalizedName = "Admin"
-                        },
-                        new
-                        {
-                            Id = "2",
-                            ConcurrencyStamp = "2",
-                            Name = "User",
-                            NormalizedName = "User"
-                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -336,18 +311,6 @@ namespace Festival_Finder.Migrations
                     b.HasIndex("RoleId");
 
                     b.ToTable("AspNetUserRoles", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            UserId = "1",
-                            RoleId = "1"
-                        },
-                        new
-                        {
-                            UserId = "1",
-                            RoleId = "2"
-                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
@@ -395,7 +358,7 @@ namespace Festival_Finder.Migrations
 
             modelBuilder.Entity("Festival_Finder.Models.Artist", b =>
                 {
-                    b.HasOne("Festival_Finder.Models.AppUser", "AppUser")
+                    b.HasOne("Festival_Finder.Models.AppUser", null)
                         .WithMany("Artists")
                         .HasForeignKey("AppUserId");
 
@@ -403,14 +366,12 @@ namespace Festival_Finder.Migrations
                         .WithMany()
                         .HasForeignKey("LocationId");
 
-                    b.Navigation("AppUser");
-
                     b.Navigation("Location");
                 });
 
             modelBuilder.Entity("Festival_Finder.Models.Festival", b =>
                 {
-                    b.HasOne("Festival_Finder.Models.AppUser", "AppUser")
+                    b.HasOne("Festival_Finder.Models.AppUser", null)
                         .WithMany("Festivals")
                         .HasForeignKey("AppUserId");
 
@@ -419,8 +380,6 @@ namespace Festival_Finder.Migrations
                         .HasForeignKey("LocationId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.Navigation("AppUser");
 
                     b.Navigation("Location");
                 });

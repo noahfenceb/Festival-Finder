@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\LaunchCode\\Desktop\\New folder\\New folder\\Festival-Finder\\Festival Finder\\Festival Finder.csproj": {}
+    "C:\\Users\\LaunchCode\\Desktop\\Festival-Finder\\Festival Finder\\Festival Finder.csproj": {}
   },
   "projects": {
-    "C:\\Users\\LaunchCode\\Desktop\\New folder\\New folder\\Festival-Finder\\Festival Finder\\Festival Finder.csproj": {
+    "C:\\Users\\LaunchCode\\Desktop\\Festival-Finder\\Festival Finder\\Festival Finder.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\LaunchCode\\Desktop\\New folder\\New folder\\Festival-Finder\\Festival Finder\\Festival Finder.csproj",
+        "projectUniqueName": "C:\\Users\\LaunchCode\\Desktop\\Festival-Finder\\Festival Finder\\Festival Finder.csproj",
         "projectName": "Festival Finder",
-        "projectPath": "C:\\Users\\LaunchCode\\Desktop\\New folder\\New folder\\Festival-Finder\\Festival Finder\\Festival Finder.csproj",
+        "projectPath": "C:\\Users\\LaunchCode\\Desktop\\Festival-Finder\\Festival Finder\\Festival Finder.csproj",
         "packagesPath": "C:\\Users\\LaunchCode\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\LaunchCode\\Desktop\\New folder\\New folder\\Festival-Finder\\Festival Finder\\obj\\",
+        "outputPath": "C:\\Users\\LaunchCode\\Desktop\\Festival-Finder\\Festival Finder\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\LaunchCode\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -40,6 +40,10 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.16, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[7.0.5, )"
