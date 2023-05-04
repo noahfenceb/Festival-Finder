@@ -1,9 +1,11 @@
 ﻿using Festival_Finder.Models;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace Festival_Finder.Data
 {
-    public class ApplicationDbContext : DbContext
+    public class ApplicationDbContext : IdentityDbContext<AppUser>
     {
         
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
@@ -16,19 +18,73 @@ namespace Festival_Finder.Data
         public DbSet<Location> Locations { get; set; }
 
 
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        protected override void OnModelCreating(ModelBuilder builder)
         {
-            //set up your connection for one to many (employer to jobs)
-            //modelBuilder.Entity<Job>()
-            //.HasOne(p => p.Employer)
-            //.WithMany(b => b.Jobs);
+            base.OnModelCreating(builder);
 
-            //set up your connection for many to many (skills to jobs)
-            //modelBuilder.Entity<Festival>()
-            //.HasMany(e => e.Artists)
-            //.WithMany(e => e.Festivals)
-            //.UsingEntity(j => j.ToTable("FestivalList"));
+            //Seed data for roles => admin, user and super-user
+            var roles = new List<IdentityRole>
+            {
+                new IdentityRole
+                {
+                    Name = "Admin",
+                    NormalizedName = "Admin",
+                    Id = "1",
+                    ConcurrencyStamp = "1"
+                },
+
+                //new IdentityRole
+                //{
+                //    Name = "SuperAdmin",
+                //    NormalizedName = "SuperAdmin",
+                //    Id = 2,
+                //    ConcurrencyStamp = 2
+                //},
+
+                new IdentityRole
+                {
+                    Name = "User",
+                    NormalizedName = "User",
+                    Id = "2",
+                    ConcurrencyStamp = "2"
+                }
+
+            };
+
+            builder.Entity<IdentityRole>().HasData(roles);
+
+            //seed admin user
+            var adminUser = new AppUser
+            {
+                UserName = "admin@yahoo.com",
+                Email = "admin@yahoo.com",
+                NormalizedEmail = "admin@yahoo.com".ToUpper(),
+                NormalizedUserName = "admin@yahoo.com".ToUpper(),
+                Id = "1"
+            };
+
+            adminUser.PasswordHash = new PasswordHasher<AppUser>().HashPassword(adminUser, "admin123");
+
+            builder.Entity<AppUser>().HasData(adminUser);
+
+            var adminRoles = new List<IdentityUserRole<string>>
+            {
+                new IdentityUserRole<string>
+                {
+                    RoleId = "1",
+                    UserId = adminUser.Id
+                },
+                new IdentityUserRole<string>
+                {
+                    RoleId = "2",
+                    UserId = adminUser.Id
+                },
+            };
+
+            builder.Entity<IdentityUserRole<string>>().HasData(adminRoles);
         }
+
+
     }
 
 }

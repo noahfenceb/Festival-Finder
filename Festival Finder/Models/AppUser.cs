@@ -1,18 +1,17 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Identity;
+using System;
 namespace Festival_Finder.Models
 {
-	public class AppUser
+	public class AppUser: IdentityUser
 
 	{
-		public int Id { get; set; }
-		public string Name { get; set; }
-		public string Email { get; set; }
-		public int Phone { get; set; }
-		public string ImageURL { get; set; }
+		
+		public string? Name { get; set; }
+		public string? ImageURL { get; set; }
         public int? LocationId { get; set; }
-		public Location Location { get; set; }
-        public ICollection<Artist> Artists { get; set; }
-        public ICollection<Festival>Festivals { get; set; }
+		public Location? Location { get; set; }
+        public ICollection<Artist>? Artists { get; set; }
+        public ICollection<Festival>? Festivals { get; set; }
         
 
 		public AppUser()
@@ -20,11 +19,9 @@ namespace Festival_Finder.Models
 
 		}
 
-        public AppUser(string name, string email, int phone, string imageURL, Location location)
+        public AppUser(string? name, string? imageURL, Location? location)
         {
             Name = name;
-            Email = email;
-            Phone = phone;
             ImageURL = imageURL;
             Location = location;
         }

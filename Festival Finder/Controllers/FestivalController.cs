@@ -1,12 +1,14 @@
 ﻿using Festival_Finder.Data;
 using Festival_Finder.Models;
 using Festival_Finder.ViewModel;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 
 namespace Festival_Finder.Controllers
 {
+    [Authorize]
     public class FestivalController : Controller
     {
         private readonly ApplicationDbContext context;
@@ -15,6 +17,7 @@ namespace Festival_Finder.Controllers
         {
             context = dbcontext;
         }
+        //[AllowAnonymous]
         public IActionResult Index()
         {
             List<Festival> festivals = context.Festivals.Include(j => j.Location).Include(k => k.Artists).ToList();
@@ -110,58 +113,6 @@ namespace Festival_Finder.Controllers
             return View();
         }
 
-        //[HttpPost]
-        //public IActionResult Edit(EditFestivalViewModel editFestivalViewModel)
-        //{
-        //    //map viewmodel to model
-        //    //var festival = new Festival
-        //    //{
-        //    //    Id = editFestivalViewModel.Id,
-        //    //    Name = editFestivalViewModel.Name,
-        //    //    Description = editFestivalViewModel.Description,
-        //    //    ImageUrl = editFestivalViewModel.ImageUrl,
-        //    //    Location = editFestivalViewModel.Location,
-        //    //    Date = editFestivalViewModel.Date
-
-        //    //};
-        //    var festival = context.Festivals.Find(editFestivalViewModel.Id);
-        //    var selectedArtists = new List<Artist>();
-        //    foreach(var artist in editFestivalViewModel.SelectedArtists)
-        //    {
-        //        if(int.TryParse(artist, out var s))
-        //        {
-        //            var artistFound = context.Artists.Find(s);
-        //            if(artistFound != null)
-        //            {
-        //                selectedArtists.Add(artistFound);
-        //            }
-        //        }
-        //    }
-
-        //    festival.Artists = selectedArtists;
-
-        //    var existingFestival = context.Festivals.Include(x => x.Artists)
-        //        .Include(y => y.Location).FirstOrDefault(x => x.Id == editFestivalViewModel.Id);
-
-        //    if(existingFestival != null)
-        //    {
-        //        //existingFestival.Id = festival.Id;
-        //        //existingFestival.Name = festival.Name;
-        //        //existingFestival.Description = festival.Description;
-        //        //existingFestival.ImageUrl = festival.ImageUrl;
-        //        //existingFestival.Location = festival.Location;
-        //        //existingFestival.Artists = festival.Artists;
-        //        //Anthony
-        //        //festival.Name = editFestivalViewModel?.Name;
-        //        //festival.Description = editFestivalViewModel.Description
-
-        //    }
-
-        //    context.Update(festival);
-        //    context.SaveChanges();
-        //    //Notification
-        //    return RedirectToAction("Index");
-        //}
 
         [HttpPost]
         public IActionResult Edit(EditFestivalViewModel editFestivalViewModel)

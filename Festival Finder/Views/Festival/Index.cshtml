@@ -3,24 +3,24 @@
 
 <div class="row py-lg-5 text-center">
     <div class="col-lg-6 col-md-8 mx-auto">
-        <h1 class="fw-light">Festivals</h1>
-        <p class="lead text-muted">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don’t simply skip over it entirely.</p>
+        <h1 class="fw-light text-white">Festivals</h1>
+        <p class="lead text-muted">Our festival app has everything you need to make the most of your music festival experience. Discover festivals, plan your itinerary, connect with other music enthusiasts, and get real-time updates on festival news and weather alerts, all from the convenience of your smartphone</p>
         <p>
-            <a href="#" class="btn btn-primary my-2">Main call to action</a>
-            <a href="#" class="btn btn-secondary my-2">Secondary action</a>
+            <a href="#" class="btn btn-primary my-2">Local Festivals</a>
+            <a href="#" class="btn btn-secondary my-2">Upcoming Festivals</a>
         </p>
     </div>
 </div>
-<div class="py-5">
+<div class="mt-2">
     <div class="container">
-        <a class="btn btn-primary" asp-controller="Festival" asp-action="Create">Add Festival</a>
+        <a class="btn btn-primary mb-3" asp-controller="Festival" asp-action="Create">Add Festival</a>
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
 
             @foreach(Festival festival in Model)
             {
                 <div class="col-4">
-                    <div class="card shadow-sm">
-                        <img class="card-img-top" src="@festival.ImageUrl" alt="Card image cap">
+                    <div class="card shadow-sm selected">
+                        <img class="card-img-top card-pic" src="@festival.ImageUrl" alt="Card image cap">
 
                         <div class="card-body">
 

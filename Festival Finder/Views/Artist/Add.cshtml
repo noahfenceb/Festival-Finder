@@ -1,13 +1,13 @@
 ﻿@using Festival_Finder.ViewModel
 @model AddArtistViewModel
 
-<h1>Add New Tag</h1>
+<h1 class="text-white">Add Atrist</h1>
 
 <form asp-controller="Artist" asp-action="Add" method="post">
-    <div class="form-group">
-        <label asp-for="Name"></label>
-        <input asp-for="Name" />
+    <div class="form-group mb-3">
+        <label asp-for="Name" class="form-label text-white"></label>
+        <input asp-for="Name" class="form-control"/>
         <span asp-validation-for="Name"></span>
     </div>
-    <input type="submit" value="Add Artist" />
+    <input type="submit" value="Add Artist" class="mb-3" />
 </form>

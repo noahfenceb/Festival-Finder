@@ -1,0 +1,20 @@
+﻿@using Festival_Finder.ViewModel
+@model LoginViewModel;
+
+
+<div class="container mx-auto">
+    <h3 class="my-4">Login</h3>
+    <form method="post">
+        @*<input type="hidden" asp-for="ReturnUrl"/>*@
+        <div class="mb-3">
+            <label class="form-label text-white">Username</label>
+            <input type="text" id="username" class="form-control" asp-for="Username" />
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label text-white">Password</label>
+            <input type="password" id="password" class="form-control" asp-for="Password" />
+        </div>
+        <button class="mb-3 btn btn-primary text-white" type="submit">Login</button>
+    </form>
+</div>
