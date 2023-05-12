@@ -14,6 +14,7 @@ namespace Festival_Finder.Models
 		public Location? Location { get; set; }
         public string? AppUserId { get; set; }
         public AppUser? AppUser { get; set; }
+        
 
         public Festival()
 		{

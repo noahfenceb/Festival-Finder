@@ -1,0 +1,15 @@
+﻿@model Festival_Finder.ViewModel.SavedFestivalViewModel
+
+    @*<h2 class ="text-white">Favourite List</h2>
+
+    <ul>
+        @foreach(var festival in Model){
+            <li class="text-white">@festival.Name</li>
+        }
+    </ul>*@
+    <h1 class="text-white">User Festival</h1>
+
+    <ul class="text-white">
+        <li>@Model.Name</li>
+        <li>@Model.Description</li>
+    </ul>

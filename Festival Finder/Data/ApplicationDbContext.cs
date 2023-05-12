@@ -16,6 +16,8 @@ namespace Festival_Finder.Data
         public DbSet<Artist> Artists { get; set; }
         public DbSet<Festival> Festivals { get; set; }
         public DbSet<Location> Locations { get; set; }
+        public DbSet<SaveFestival> SaveFestivals { get; set; }
+       
 
 
         protected override void OnModelCreating(ModelBuilder builder)

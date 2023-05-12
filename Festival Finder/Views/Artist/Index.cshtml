@@ -1,6 +1,8 @@
 ﻿@model List<Artist>
 
-<h1 class="text-white">All Artist</h1>
+<h1 class="text-white mb-3">All Artist</h1>
+
+<a class="btn btn-primary mb-3" asp-controller="Artist" asp-action="Add">Add Artist</a>
 
 @if (Model.Count == 0)
 {
