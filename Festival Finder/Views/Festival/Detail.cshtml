@@ -25,9 +25,12 @@
             <div>
                 <div class="row d-flex">
                     <div class="mt-3">
-                    <a asp-controller="Festival" asp-action="Edit" class="btn btn-primary col-3" asp-route-id="@Model.Id">Update</a>
-                    
-                    <a class ="col-3 btn btn-danger" asp-controller="Festival" asp-action="Delete" asp-route-id="@Model.Id">Delete</a>
+                        @if(User.Identity.IsAuthenticated && User.IsInRole("Admin")){
+                            <a asp-controller="Festival" asp-action="Edit" class="btn btn-primary col-3" asp-route-id="@Model.Id">Update</a>
+
+                            <a class="col-3 btn btn-danger" asp-controller="Festival" asp-action="Delete" asp-route-id="@Model.Id">Delete</a>
+                        }
+                   
                     </div>
                     <div>
                         <a class="btn btn-secondary my-4" asp-controller="Festival" asp-action="Index">Back To Festival</a>

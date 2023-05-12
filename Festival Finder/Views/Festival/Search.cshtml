@@ -1,9 +1,9 @@
 ﻿@using Festival_Finder.Models
-@model Festival
+@model List<Festival>
 
-<h2>Search Results</h2>
+@*<h2 class="text-white">Search Results</h2>
 
-@*@if (!Model.Any())
+@if (!Model.Any())
 {
     <p class="text-white">No festivals found.</p>
 }
@@ -19,9 +19,9 @@ else
             </li>
         }
     </ul>
-}*@
+}
 
-<div class="container text-white">
+@*<div class="container text-white">
     <div class="row">
         <div class="col-5">
             <h3>@Model.ImageUrl</h3>
@@ -31,4 +31,35 @@ else
         </div>
     </div>
 </div>
-<a class="btn btn-secondary my-4" asp-controller="Festival" asp-action="Index">Back To Festival</a>
+<a class="btn btn-secondary my-4" asp-controller="Festival" asp-action="Index">Back To Festival</a>*@
+
+
+@{
+    ViewData["Title"] = "Search Results";
+}
+
+<h1 class="text-primary">Search Results</h1>
+
+@if (Model.Count == 0)
+{
+    <p class="text-white">No results found.</p>
+}
+else
+{
+    <ul class="text-white">
+        @foreach (var festival in Model)
+        {
+            <li>
+                <h2 class="text-white">@festival.Name</h2>
+                <p class="text-white">@festival.Description</p>
+                <p class="text-white">@festival.Location</p>
+                @*<ul>
+                    @foreach (var artist in festival.Artists)
+                    {
+                        <li>@artist.Name</li>
+                    }
+                </ul>*@
+            </li>
+        }
+    </ul>
+}
