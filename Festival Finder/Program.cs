@@ -2,6 +2,7 @@
 using Festival_Finder.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using NToastNotify;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -27,6 +28,7 @@ builder.Services.Configure<IdentityOptions>(options =>
 
 });
 
+
 var app = builder.Build();
 
 
@@ -46,7 +48,6 @@ app.UseRouting();
 
 app.UseAuthentication();
 app.UseAuthorization();
-
 
 app.MapControllerRoute(
     name: "default",

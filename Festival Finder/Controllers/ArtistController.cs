@@ -42,6 +42,7 @@ namespace Festival_Finder.Controllers
                 };
                 context.Artists.Add(artist);
                 context.SaveChanges();
+                TempData["success"] = "Artist Added";
                 return RedirectToAction("Create", "Festival");
             }
 
@@ -82,6 +83,7 @@ namespace Festival_Finder.Controllers
                 //Save Changes
                 context.SaveChanges();
                 //Success notification
+                TempData["success"] = "Artist Updated";
                 return RedirectToAction("Index");
             }
             //Error Notification
@@ -98,6 +100,7 @@ namespace Festival_Finder.Controllers
                 context.SaveChanges();
 
                 //Success Notification
+                TempData["success"] = "Artist Removed";
                 return RedirectToAction("Index");
             }
 

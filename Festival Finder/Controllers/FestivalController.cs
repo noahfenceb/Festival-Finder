@@ -79,7 +79,7 @@ namespace Festival_Finder.Controllers
             festival.Artists = selectedArtist;
             context.Add(festival);
             context.SaveChanges();
-
+            TempData["success"] = "Festival create successful";
             return RedirectToAction("Index");
         }
 
@@ -146,6 +146,7 @@ namespace Festival_Finder.Controllers
                 context.Update(existingFestival);
                 context.SaveChanges();
                 //Notification
+                TempData["success"] = "Festival update successful";
                 return RedirectToAction("Index");
             }
             return NotFound();
@@ -158,21 +159,38 @@ namespace Festival_Finder.Controllers
             {
                 context.Festivals.Remove(existingFestival);
                 context.SaveChanges();
+                TempData["success"] = "Festival Delete successful";
                 return RedirectToAction("Index");
             }
+            TempData["error"] = "Delete unsuccessful";
             return View("Edit");
         }
 
 
-        public IActionResult Search(string searchTerm)
-        {
-            var festivals = context.Festivals.Include(f => f.Artists).Where(f => f.Location.City.Contains(searchTerm) ||
-            f.Description.Contains(searchTerm) || f.Artists.Any(a => a.Name.Contains(searchTerm))).ToList();
+        //public IActionResult Search(string searchTerm)
+        //{
+        //    var festivals = context.Festivals.Include(f => f.Artists).Where(f => f.Description.Contains(searchTerm)).ToList();
 
-            return View(festivals);
+        //    return View(festivals);
+        //}
+        public IActionResult Search(string searchString)
+        {
+            var festivals = from f in context.Festivals
+                            select f;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                festivals = festivals.Where(f =>
+                    f.Name.Contains(searchString) ||
+                    f.Description.Contains(searchString));
+                    //|| f.Artists.Any(a => a.Name.Contains(searchString)));
+                
+            }
+
+            return View(festivals.ToList());
         }
 
-       
+
 
     }
 }
