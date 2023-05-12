@@ -7,9 +7,15 @@
             <div class="project-info-box mt-0">
                 <h3 class="text-white my-4 font-weight-bold">@Model.Name</h3>
                 <p class="mb-2 text-white bg-success">@Model.Description</p>
+                <p class="me-2 text-white">
+                    Artist: @foreach (var artist in Model.Artists)
+                    {
+                        <span class="badge bg-warning me-1">@artist.Name</span>
+                    }
+                </p>
             </div>
 
-            <div class="project-info-box" mb-4>
+            <div class="mb-2">
                 <p class="text-white mb-2"><b>City: </b>@Model.Location.City</p>
                 <p class="text-white mb-2"><b>Street: </b>@Model.Location.Street</p>
                 <p class="text-white mb-2"><b>State: </b>@Model.Location.State</p>
@@ -25,6 +31,7 @@
                     </div>
                     <div>
                         <a class="btn btn-secondary my-4" asp-controller="Festival" asp-action="Index">Back To Festival</a>
+                        
                     </div>
                 </div>
                 
@@ -36,10 +43,7 @@
 
         <div class="col-md-7">
             <img src="@Model.ImageUrl" alt="project-image" class="rounded" width="500" height="500">
-            <div class="project-info-box">
-                <p class="text-white"><b>Genre:</b> Country Music Festival</p>
-                
-            </div>
+            <a class="btn btn-danger" asp-controller="SaveFestival" asp-action="Add" asp-route-id="@Model.Id">Add To Favourite</a>
         </div>
     </div>
 </div>

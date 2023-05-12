@@ -34,9 +34,18 @@ namespace Festival_Finder.Controllers
             if (result.Succeeded)
             {
                 //Assign User role
-                var roleResult = await userManager.AddToRoleAsync(identityUser, "User");
+                //var roleResult = await userManager.AddToRoleAsync(identityUser, "User");
+                var roles = new List<string> { "User" };
 
-                if (roleResult.Succeeded)
+                if (registerViewModel.IsAdmin)
+                {
+                    roles.Add("Admin");
+                }
+
+                result = await userManager.AddToRolesAsync(identityUser, roles);
+
+
+                if (result.Succeeded && result != null)
                 {
                     return RedirectToAction("Login");
                 }

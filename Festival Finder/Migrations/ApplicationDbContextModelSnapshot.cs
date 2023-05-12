@@ -113,15 +113,15 @@ namespace Festival_Finder.Migrations
                         {
                             Id = "1",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "3fe9b664-7727-475e-8657-39bb277f62c6",
+                            ConcurrencyStamp = "939eb60a-f6fb-4472-a01d-10100b5c4031",
                             Email = "admin@yahoo.com",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@YAHOO.COM",
                             NormalizedUserName = "ADMIN@YAHOO.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEHpVbHQwE3pOZC8364RIq8UAdrlGuePQbgVFFxQraPKWreP0Tt9PWwgjdetS78s+Ng==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEBFQuVsivhVwOUwn+44hkyYizTTLgQRHOecYbyCVxvEvu/SsVglkFp7Qd6QZH4WEUQ==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "a7e89961-a550-4103-ad6f-13c3f1a8800f",
+                            SecurityStamp = "91a3a04b-9ee9-4d99-ab86-581d734338bf",
                             TwoFactorEnabled = false,
                             UserName = "admin@yahoo.com"
                         });
@@ -211,6 +211,27 @@ namespace Festival_Finder.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Locations");
+                });
+
+            modelBuilder.Entity("Festival_Finder.Models.SaveFestival", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<string>("AppUserId")
+                        .HasColumnType("varchar(255)");
+
+                    b.Property<int?>("FestivalId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AppUserId");
+
+                    b.HasIndex("FestivalId");
+
+                    b.ToTable("SaveFestivals");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -425,6 +446,21 @@ namespace Festival_Finder.Migrations
                     b.Navigation("Location");
                 });
 
+            modelBuilder.Entity("Festival_Finder.Models.SaveFestival", b =>
+                {
+                    b.HasOne("Festival_Finder.Models.AppUser", "AppUser")
+                        .WithMany("SaveFestivals")
+                        .HasForeignKey("AppUserId");
+
+                    b.HasOne("Festival_Finder.Models.Festival", "Festival")
+                        .WithMany()
+                        .HasForeignKey("FestivalId");
+
+                    b.Navigation("AppUser");
+
+                    b.Navigation("Festival");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
@@ -481,6 +517,8 @@ namespace Festival_Finder.Migrations
                     b.Navigation("Artists");
 
                     b.Navigation("Festivals");
+
+                    b.Navigation("SaveFestivals");
                 });
 #pragma warning restore 612, 618
         }

@@ -1,0 +1,15 @@
+﻿@using Festival_Finder.Models
+@model SaveFestival
+
+@*@foreach(var item in Model)
+{
+    <p>class="text-white">@item.Festival.Name</p>
+}*@
+
+
+<p class="text-white">@Model.Festival.Name</p>
+<p class="text-white">@Model.Festival.Description</p>
+<img src="@Model.Festival.ImageUrl" alt="project-image" class="rounded" width="500" height="500">
+
+
+<h1 class="text-white">Hello</h1>

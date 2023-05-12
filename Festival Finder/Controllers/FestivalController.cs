@@ -2,6 +2,7 @@
 using Festival_Finder.Models;
 using Festival_Finder.ViewModel;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -12,21 +13,24 @@ namespace Festival_Finder.Controllers
     public class FestivalController : Controller
     {
         private readonly ApplicationDbContext context;
+        private readonly UserManager<AppUser> _userManager;
 
-        public FestivalController(ApplicationDbContext dbcontext)
+        public FestivalController(ApplicationDbContext dbcontext, UserManager<AppUser> userManager)
         {
             context = dbcontext;
+            _userManager = userManager;
         }
         //[AllowAnonymous]
         public IActionResult Index()
         {
             List<Festival> festivals = context.Festivals.Include(j => j.Location).Include(k => k.Artists).ToList();
             return View(festivals);
+
         }
 
         public IActionResult Detail(int? id)
         {
-            Festival festival = context.Festivals.Include(j => j.Location).Single(j => j.Id == id);
+            Festival festival = context.Festivals.Include(j => j.Location).Include(a => a.Artists).Single(j => j.Id == id);
             return View(festival);
 
         }
