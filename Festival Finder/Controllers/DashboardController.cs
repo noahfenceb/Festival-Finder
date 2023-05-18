@@ -3,6 +3,7 @@ using Festival_Finder.Models;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace Festival_Finder.Controllers
 {
@@ -15,27 +16,9 @@ namespace Festival_Finder.Controllers
             context = dbcontext;
         }
 
-        //public IActionResult Index()
-        //{
-        //    // Get the current user's saved festivals
-        //    var userId = User.Identity.GetUserId();
-        //    var currentUser = context.Users.Find(userId);
-        //    var savedFestivals = currentUser.SaveFestivals;
 
-        //    // Map the saved festivals to the view model
-        //    var savedFestivalViewModels = savedFestivals.Select(sf => new SavedFestivalViewModel
-        //    {
-        //        Id = sf.FestivalId,
-        //        Name = sf.Festival.Name,
-        //        Description = sf.Festival.Description
-        //    }).ToList();
-
-        //    // Pass the view model to the view
-        //    return View(savedFestivalViewModels);
-
-        //}
-            public IActionResult Add(int id)
-            {
+        public IActionResult Add(int id)
+        {
             if (User.Identity.IsAuthenticated)
             {
                 var userId = User.Identity.GetUserId();
@@ -46,7 +29,7 @@ namespace Festival_Finder.Controllers
 
                 if (existingFestival != null)
                 {
-                    return RedirectToAction("Index", "Dashboard");
+                    return RedirectToAction("Index", "Festival");
                 }
 
                 var savedFestival = new SaveFestival
@@ -61,6 +44,49 @@ namespace Festival_Finder.Controllers
                 //return View(allFestivals);
                 return View(savedFestival);
             }
+            return RedirectToAction("Index", "Festival");
+        }
+
+        //public IActionResult Detail()
+        //{
+        //    var userId = User.Identity.GetUserId();
+        //    var favourites = context.SaveFestivals.Where(x => x.AppUserId == userId).ToList();
+        //    return View(favourites);
+        //}
+
+
+        //public IActionResult Index()
+        //{
+        //    if (User.Identity.IsAuthenticated)
+        //    {
+        //        var userId = User.Identity.GetUserId();
+        //        var savedFestivals = context.SaveFestivals
+        //            .Include(sf => sf.Festival)
+        //            .Where(sf => sf.AppUserId == userId)
+        //            .ToList();
+
+        //        return View(savedFestivals);
+        //    }
+
+        //    return RedirectToAction("Index", "Festival");
+        //}
+
+        public IActionResult Index()
+        {
+            if (User.Identity.IsAuthenticated)
+            {
+                var userId = User.Identity.GetUserId();
+                var savedFestivals = context.SaveFestivals
+                    .Include(sf => sf.Festival)
+                        .ThenInclude(f => f.Artists)
+                    .Include(sf => sf.Festival)
+                        .ThenInclude(f => f.Location)
+                    .Where(sf => sf.AppUserId == userId)
+                    .ToList();
+
+                return View(savedFestivals);
+            }
+
             return RedirectToAction("Index", "Festival");
         }
 

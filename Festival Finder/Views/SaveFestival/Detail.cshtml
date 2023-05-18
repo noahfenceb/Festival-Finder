@@ -1,0 +1,19 @@
+﻿@*@model List<SaveFestival>
+
+@{
+    ViewData["Title"] = "Detail";
+}
+
+<h1>Detail</h1>
+
+<div>
+    <h4>SaveFestival</h4>
+    <hr />
+    @foreach(var item in Model)
+    {
+        <p>@item.Festival.Name</p>
+        <p>@item.Festival.Description</p>
+        <p>@item.Festival.Location.City</p>
+    }
+</div>
+*@

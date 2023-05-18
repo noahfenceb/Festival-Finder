@@ -2,7 +2,6 @@
 using Festival_Finder.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using NToastNotify;
 
 var builder = WebApplication.CreateBuilder(args);
 

@@ -1,12 +1,37 @@
-﻿@*<h1>DashBoard</h1>
+﻿@model List<SaveFestival>
 
-<div class="container text-white">
-    <div class="row">
-        <div class="col-5">
-            <h3>Image</h3>
-        </div>
-        <div class="col-7">
-            <h4>Description</h4>
-        </div>
-    </div>
-</div>*@
+<h1 class="text-white my-4 container">My Festivals</h1>
+
+<ul class="container">
+    @foreach (var savedFestival in Model)
+    {
+        <li class="mb-4">
+            <div class="row">
+                <div class="col-8">
+                    <img src="@savedFestival.Festival.ImageUrl" alt="project-image" class="rounded" width="80%" height="250px">
+                </div>
+                <div class="col-4 justify-content-center align-items-center">
+                    <p class="text-white">@savedFestival.Festival.Name</p>
+                    <p class="text-white">@savedFestival.Festival.Description</p>
+                    @if (savedFestival.Festival.Location != null)
+                    {
+                        <p class="text-white">Location: @savedFestival.Festival.Location.City</p>
+                    }
+                    <p class="me-2 text-white">
+                        Artist:
+                        @if (savedFestival.Festival.Artists != null)
+                        {
+                            @foreach (var artist in savedFestival.Festival.Artists)
+                            {
+                                <span class="badge bg-warning me-1">@artist.Name</span>
+                            }
+                        }
+                    </p>
+
+                    <a class="my-2 btn btn-secondary" asp-controller="Festival" asp-action="Detail" asp-route-id="@savedFestival.Festival.Id">Click for more Information</a>
+                </div>
+                <hr class="my-3">
+            </div>
+        </li>
+    }
+</ul>

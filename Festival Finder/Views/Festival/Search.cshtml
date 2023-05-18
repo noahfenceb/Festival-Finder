@@ -1,44 +1,6 @@
-﻿@using Festival_Finder.Models
-@model List<Festival>
+﻿@model List<Festival>
 
-@*<h2 class="text-white">Search Results</h2>
-
-@if (!Model.Any())
-{
-    <p class="text-white">No festivals found.</p>
-}
-else
-{
-    <ul>
-        @foreach (var festival in Model)
-        {
-            <li>
-                <h3 class="text-white">@festival.Name</h3>
-                <p class="text-white">@festival.Description</p>
-                <p class="text-white">@festival.Location.City</p>
-            </li>
-        }
-    </ul>
-}
-
-@*<div class="container text-white">
-    <div class="row">
-        <div class="col-5">
-            <h3>@Model.ImageUrl</h3>
-        </div>
-        <div class="col-7">
-            <h4>@Model.Description</h4>
-        </div>
-    </div>
-</div>
-<a class="btn btn-secondary my-4" asp-controller="Festival" asp-action="Index">Back To Festival</a>*@
-
-
-@{
-    ViewData["Title"] = "Search Results";
-}
-
-<h1 class="text-primary">Search Results</h1>
+<h1 class="text-white">Search Results</h1>
 
 @if (Model.Count == 0)
 {
@@ -46,19 +8,33 @@ else
 }
 else
 {
-    <ul class="text-white">
+    <ul class="container">
         @foreach (var festival in Model)
         {
             <li>
-                <h2 class="text-white">@festival.Name</h2>
-                <p class="text-white">@festival.Description</p>
-                <p class="text-white">@festival.Location</p>
-                @*<ul>
-                    @foreach (var artist in festival.Artists)
-                    {
-                        <li>@artist.Name</li>
-                    }
-                </ul>*@
+                <div class="row">
+                    <div class="col-4">
+                        <img src="@festival.ImageUrl" alt="project-image" class="rounded" width="350" height="300">
+                    </div>
+                    <div class="col-8">
+                        <p class="text-white">@festival.Name</p>
+                        <p class="text-white">@festival.Description</p>
+                        @if (festival.Location != null)
+                        {
+                            <p class="text-white">@festival.Location.City</p>
+                        }
+                        <p class="me-2 text-white">
+                            @if (festival.Artists != null)
+                            {
+                                <span>Artist:</span>
+                                @foreach (var artist in festival.Artists)
+                                {
+                                    <span class="badge bg-warning me-1">@artist.Name</span>
+                                }
+                            }
+                        </p>
+                    </div>
+                </div>
             </li>
         }
     </ul>
