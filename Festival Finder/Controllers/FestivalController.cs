@@ -152,17 +152,35 @@ namespace Festival_Finder.Controllers
             return NotFound();
         }
 
+        //public IActionResult Delete(int id)
+        //{
+        //    var existingFestival = context.Festivals.Find(id);
+        //    if(existingFestival != null)
+        //    {
+        //        context.Festivals.Remove(existingFestival);
+        //        context.SaveChanges();
+
+        //        return RedirectToAction("Index");
+        //    }
+
+        //    return View("Edit");
+        //}
         public IActionResult Delete(int id)
         {
             var existingFestival = context.Festivals.Find(id);
-            if(existingFestival != null)
+            if (existingFestival != null)
             {
+                // Delete related SaveFestival records
+                var relatedSaveFestivals = context.SaveFestivals.Where(x => x.FestivalId == id);
+                context.SaveFestivals.RemoveRange(relatedSaveFestivals);
+
+                // Delete the festival
                 context.Festivals.Remove(existingFestival);
                 context.SaveChanges();
-                
+
                 return RedirectToAction("Index");
             }
-            
+
             return View("Edit");
         }
 

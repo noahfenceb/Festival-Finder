@@ -29,6 +29,7 @@
                     </p>
 
                     <a class="my-2 btn btn-secondary" asp-controller="Festival" asp-action="Detail" asp-route-id="@savedFestival.Festival.Id">Click for more Information</a>
+                    <a class="btn btn-danger" type="submit" asp-controller="Dashboard" asp-action="Remove" asp-route-id="@savedFestival.Festival.Id">Remove</a>
                 </div>
                 <hr class="my-3">
             </div>
