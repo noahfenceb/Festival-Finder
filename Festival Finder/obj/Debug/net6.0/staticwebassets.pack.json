@@ -1,14 +1,6 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\LaunchCode\\.nuget\\packages\\ntoastnotify\\8.0.0\\contentFiles\\any\\net6.0\\wwwroot\\noty.js",
-      "PackagePath": "staticwebassets\\noty.js"
-    },
-    {
-      "Id": "C:\\Users\\LaunchCode\\.nuget\\packages\\ntoastnotify\\8.0.0\\contentFiles\\any\\net6.0\\wwwroot\\toastr.js",
-      "PackagePath": "staticwebassets\\toastr.js"
-    },
-    {
       "Id": "C:\\Users\\LaunchCode\\Desktop\\Capstone\\Festival-Finder\\Festival Finder\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\Festival Finder.bundle.scp.css",
       "PackagePath": "staticwebassets\\Festival Finder.bundle.scp.css"
     },

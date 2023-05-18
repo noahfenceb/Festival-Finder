@@ -8,7 +8,7 @@ namespace Festival_Finder.Models
 		public string? Description { get; set; }
         public string? ImageUrl { get; set; }
 		public int ArtistId { get; set; }
-		public ICollection<Artist> Artists { get; set; }
+		public ICollection<Artist>? Artists { get; set; }
         public DateTime Date { get; set; }
         public int LocationId { get; set; }
 		public Location? Location { get; set; }

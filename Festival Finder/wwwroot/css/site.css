@@ -36,3 +36,9 @@ body {
     width: 98%;
     height: 50%;
 }
+
+hr {
+    height: 4px;
+    background-color: #f7b00a;
+    border: none;
+}

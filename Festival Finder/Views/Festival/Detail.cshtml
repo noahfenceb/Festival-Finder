@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-5 my-5">
-            <div class="project-info-box mt-0">
+            <div class="">
                 <h3 class="text-white my-4 font-weight-bold">@Model.Name</h3>
                 <p class="mb-2 text-white bg-success">@Model.Description</p>
                 <p class="me-2 text-white">
@@ -33,7 +33,7 @@
                    
                     </div>
                     <div>
-                        <a class="btn btn-secondary my-4" asp-controller="Festival" asp-action="Index">Back To Festival</a>
+                        <a class="btn btn-secondary my-4" asp-controller="Festival" asp-action="Index">Back To Festivals</a>
                         
                     </div>
                 </div>
@@ -46,7 +46,7 @@
 
         <div class="col-md-7">
             <img src="@Model.ImageUrl" alt="project-image" class="rounded" width="500" height="500">
-            <a class="btn btn-danger" asp-controller="SaveFestival" asp-action="Add" asp-route-id="@Model.Id">Add To Favourite</a>
+            <a class="btn btn-danger" asp-controller="Dashboard" asp-action="Add" asp-route-id="@Model.Id">Add To Favourite</a>
         </div>
     </div>
 </div>

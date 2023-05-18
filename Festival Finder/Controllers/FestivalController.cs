@@ -159,36 +159,38 @@ namespace Festival_Finder.Controllers
             {
                 context.Festivals.Remove(existingFestival);
                 context.SaveChanges();
-                TempData["success"] = "Festival Delete successful";
+                
                 return RedirectToAction("Index");
             }
-            TempData["error"] = "Delete unsuccessful";
+            
             return View("Edit");
         }
 
-
-        //public IActionResult Search(string searchTerm)
-        //{
-        //    var festivals = context.Festivals.Include(f => f.Artists).Where(f => f.Description.Contains(searchTerm)).ToList();
-
-        //    return View(festivals);
-        //}
         public IActionResult Search(string searchString)
         {
-            var festivals = from f in context.Festivals
-                            select f;
+            var festivals = context.Festivals
+                .Include(f => f.Artists)
+                .Include(f => f.Location)
+                .ToList(); // Convert to a list
 
             if (!String.IsNullOrEmpty(searchString))
             {
                 festivals = festivals.Where(f =>
-                    f.Name.Contains(searchString) ||
-                    f.Description.Contains(searchString));
-                    //|| f.Artists.Any(a => a.Name.Contains(searchString)));
-                
+                    f.Name.ToLower().Contains(searchString.ToLower()) ||
+                    f.Description.ToLower().Contains(searchString.ToLower()) ||
+                    f.Artists.Any(a => a.Name.ToLower().Contains(searchString.ToLower())) ||
+                    f.Location.City.ToLower().Contains(searchString.ToLower()))
+                    .ToList(); // Convert to a list after filtering
+            }
+            else
+            {
+                festivals = new List<Festival>(); // Empty list if no search query
             }
 
-            return View(festivals.ToList());
+            return View(festivals); // Pass the list to the view
         }
+
+
 
 
 
