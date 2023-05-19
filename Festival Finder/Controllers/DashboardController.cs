@@ -40,36 +40,11 @@ namespace Festival_Finder.Controllers
 
                 context.SaveFestivals.Add(savedFestival);
                 context.SaveChanges();
-                //List<SaveFestival> allFestivals = context.SaveFestivals.ToList();
-                //return View(allFestivals);
+                TempData["success"] = "Festival added successfully";
                 return View(savedFestival);
             }
             return RedirectToAction("Index", "Festival");
         }
-
-        //public IActionResult Detail()
-        //{
-        //    var userId = User.Identity.GetUserId();
-        //    var favourites = context.SaveFestivals.Where(x => x.AppUserId == userId).ToList();
-        //    return View(favourites);
-        //}
-
-
-        //public IActionResult Index()
-        //{
-        //    if (User.Identity.IsAuthenticated)
-        //    {
-        //        var userId = User.Identity.GetUserId();
-        //        var savedFestivals = context.SaveFestivals
-        //            .Include(sf => sf.Festival)
-        //            .Where(sf => sf.AppUserId == userId)
-        //            .ToList();
-
-        //        return View(savedFestivals);
-        //    }
-
-        //    return RedirectToAction("Index", "Festival");
-        //}
 
         public IActionResult Index()
         {
@@ -88,6 +63,25 @@ namespace Festival_Finder.Controllers
             }
 
             return RedirectToAction("Index", "Festival");
+        }
+
+        public IActionResult Remove(int id)
+        {
+            if (User.Identity.IsAuthenticated)
+            {
+                var userId = User.Identity.GetUserId();
+
+                var savedFestival = context.SaveFestivals
+                    .FirstOrDefault(sf => sf.AppUserId == userId && sf.FestivalId == id);
+
+                if (savedFestival != null)
+                {
+                    context.SaveFestivals.Remove(savedFestival);
+                    context.SaveChanges();
+                }
+            }
+            TempData["success"] = "Festival Removed";
+            return RedirectToAction("Index");
         }
 
     }

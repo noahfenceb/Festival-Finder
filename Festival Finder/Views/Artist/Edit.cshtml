@@ -11,18 +11,32 @@
         <div class="mb-3">
             <input type="hidden" asp-for="Id"/>
         </div>
-
-        <div class="mb-3">
-            <label class="form-label text-white">Name</label>
-            <input type="text" asp-for="Name" class="form-control"/>
-        </div>
-
-        <div>
-            <div class="d-flex">
-                <button type="submit" class="btn btn-primary">Update</button>
-                <button type="submit" class="btn btn-danger ms-3" asp-controller="Artist" asp-action="Delete">Delete</button>
+        @if (User.IsInRole("Admin"))
+        {
+            <div class="mb-3">
+                <label class="form-label text-white">Name</label>
+                <input type="text" asp-for="Name" class="form-control" />
             </div>
-        </div>
+        }
+        else
+        {
+            <div class="mb-3">
+                <label class="form-label text-white">Name</label>
+                <input type="text" asp-for="Name" class="form-control" disabled/>
+            </div>
+        }
+        
+
+        @if (User.IsInRole("Admin"))
+        {
+            <div>
+                <div class="d-flex">
+                    <button type="submit" class="btn btn-primary">Update</button>
+                    <button type="submit" class="btn btn-danger ms-3" asp-controller="Artist" asp-action="Delete">Delete</button>
+                </div>
+            </div>
+        }
+        
 
     </form>
 </div>
