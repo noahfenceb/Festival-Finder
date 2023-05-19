@@ -177,7 +177,7 @@ namespace Festival_Finder.Controllers
                 // Delete the festival
                 context.Festivals.Remove(existingFestival);
                 context.SaveChanges();
-
+                TempData["success"] = "Festival Deleted";
                 return RedirectToAction("Index");
             }
 

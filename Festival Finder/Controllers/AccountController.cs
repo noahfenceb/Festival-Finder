@@ -74,7 +74,7 @@ namespace Festival_Finder.Controllers
                 TempData["success"] = "Login successful";
                 return RedirectToAction("Index", "Festival");
             }
-
+            TempData["Error"] = "Register unsuccessful";
             return View();
 
         }

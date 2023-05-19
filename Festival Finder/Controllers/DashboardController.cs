@@ -40,7 +40,7 @@ namespace Festival_Finder.Controllers
 
                 context.SaveFestivals.Add(savedFestival);
                 context.SaveChanges();
-                
+                TempData["success"] = "Festival added successfully";
                 return View(savedFestival);
             }
             return RedirectToAction("Index", "Festival");
@@ -80,7 +80,7 @@ namespace Festival_Finder.Controllers
                     context.SaveChanges();
                 }
             }
-
+            TempData["success"] = "Festival Removed";
             return RedirectToAction("Index");
         }
 
