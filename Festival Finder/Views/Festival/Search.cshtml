@@ -1,12 +1,8 @@
 ﻿@model List<Festival>
 
-<h1 class="text-white">Search Results</h1>
+<h1 class="text-white container mb-5">Search Results(@Model.Count.ToString())</h1>
 
-@if (Model.Count == 0)
-{
-    <p class="text-white">No results found.</p>
-}
-else
+@if (Model.Count > 0)
 {
     <ul class="container">
         @foreach (var festival in Model)
@@ -36,6 +32,12 @@ else
                     </div>
                 </div>
             </li>
+            <hr class="my-4"/>
         }
     </ul>
 }
+else
+{
+    <p class="text-white">No results found.</p>
+}
+
